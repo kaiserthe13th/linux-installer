@@ -2,6 +2,7 @@
 
 RETDIR=$PWD
 cd ~/.config
+mkdir ~/.path
 
 # Refresh Apt
 sudo apt update -y
@@ -81,6 +82,19 @@ sudo make install
 
 # Install compton and nitrogen
 sudo apt install compton nitrogen
-nitrogen
+
+# exa
+
+wget "https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip" -O exa.zip
+unzip exa.zip -d ~/.path
+
+# JetBrains Mono Fonts
+
+wget "https://download.jetbrains.com/fonts/JetBrainsMono-2.242.zip?_gl=1*kd055c*_ga*OTM1NTcxODAwLjE2MzkzMTA2MTA.*_ga_V0XZL7QHEB*MTYzOTM0NDk3NC4yLjAuMTYzOTM0NDk3NC42MA..&_ga=2.186533806.648439348.1639310610-935571800.1639310610" \
+    -O "JetBrainsMono.zip"
+unzip JetBrainsMono.zip -d JetBrainsMono
+cp JetBrainsMono/fonts/ttf/* ~/.local/share/fonts
+sudo chmod 644 ~/.local/share/fonts/*
+sudo chmod 755 ~/.local/share/fonts
 
 cd $RETDIR
