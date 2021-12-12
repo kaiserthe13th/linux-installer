@@ -79,4 +79,8 @@ cd Python-3.10.1.tgz
 make -j $(nproc)
 sudo make install
 
+# Install compton and nitrogen
+sudo apt install compton nitrogen
+nitrogen
+
 cd $RETDIR
